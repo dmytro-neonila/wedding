@@ -1,0 +1,68 @@
+/* ==========================================================================
+    GENERAL STYLES
+========================================================================== */
+/* line 12, ../sass/style.scss */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+}
+
+/* line 20, ../sass/style.scss */
+ul,
+p {
+  margin: 0;
+}
+
+/* line 24, ../sass/style.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 34, ../sass/style.scss */
+input,
+button,
+textarea,
+input:active,
+textarea:active,
+button:active,
+:focus {
+  outline: none;
+}
+
+/* line 40, ../sass/style.scss */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 44, ../sass/style.scss */
+a:focus {
+  outline: none;
+}
+
+/* line 48, ../sass/style.scss */
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* line 54, ../sass/style.scss */
+.clearfix:before,
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  overflow: hidden;
+  zoom: 1;
+}
+
+/* line 62, ../sass/style.scss */
+.clearfix:after {
+  clear: both;
+}
