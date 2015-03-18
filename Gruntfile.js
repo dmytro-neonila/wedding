@@ -1,19 +1,21 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    compass: {
+    sass: {
       dist: {
-        options: {
-          sassDir: 'sass',
-          cssDir: 'css'
-        }
+        files: [{
+          expand: true,
+          cwd: 'sass',
+          src: ['*.scss'],
+          dest: '../css',
+          ext: '.css'
+        }]
       }
     },
     watch: {
       css: {
         files: '**/*.scss',
-        tasks: ['compass', 'autoprefixer'],
+        tasks: ['sass', 'autoprefixer'],
         options: {
           spawn: false,
           livereload: true
@@ -38,11 +40,11 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-autoprefixer');
 
-  grunt.registerTask('default', ['compass', 'connect', 'watch']);
+  grunt.registerTask('default', ['sass', 'connect', 'watch']);
 
 };
