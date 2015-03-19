@@ -95,8 +95,12 @@ ul {
   overflow: hidden; }
 
 .main-content {
-  text-align: center;
   padding-top: 10vh; }
+
+.lettering {
+  display: block;
+  width: 70%;
+  margin: 0 auto; }
 
 #lettering-and {
   opacity: 0.5; }
@@ -116,7 +120,7 @@ ul {
   text-align: center;
   text-transform: uppercase;
   font-weight: bold;
-  padding-top: 60%; }
+  padding-top: 40%; }
 
 .flowers {
   position: absolute;
@@ -152,11 +156,12 @@ ul {
 .text-date {
   color: #0abab5;
   font-size: 25px;
+  line-height: 60px;
   letter-spacing: 2px;
   font-family: 'Lato-Heavy', Arila, sans-serif; }
 
 .countdown {
-  margin-top: 90px;
+  margin-top: 60px;
   color: #949494;
   font-size: 16px;
   font-family: 'Lato-Heavy', Arila, sans-serif; }

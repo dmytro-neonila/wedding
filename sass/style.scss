@@ -141,8 +141,13 @@ ul {
 }
 
 .main-content {
-    text-align: center;
     padding-top: 10vh;
+}
+
+.lettering {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
 }
 
 #lettering-and {
@@ -165,7 +170,7 @@ ul {
     text-align: center;
     text-transform: uppercase;
     font-weight: bold;
-    padding-top: 60%;
+    padding-top: 40%;
 }
 
 .flowers {
@@ -205,12 +210,13 @@ ul {
 .text-date {
     color: $text-tiffany;
     font-size: 25px;
+    line-height: 60px;
     letter-spacing: 2px;
     font-family: 'Lato-Heavy', Arila, sans-serif;
 }
 
 .countdown {
-    margin-top: 90px;
+    margin-top: 60px;
     color: $text-gray;
     font-size: 16px;
     font-family: 'Lato-Heavy', Arila, sans-serif;

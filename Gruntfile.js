@@ -25,6 +25,13 @@ module.exports = function(grunt) {
           spawn: false,
           livereload: true
         }
+      },
+      js: {
+        files: '**/*.js',
+        options: {
+          spawn: false,
+          livereload: true
+        }
       }
     },
     connect: {
