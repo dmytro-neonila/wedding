@@ -1,21 +1,26 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    sass: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: 'sass',
-          src: ['*.scss'],
-          dest: '../css',
-          ext: '.css'
-        }]
+    libsass: {
+      files: {
+        expand: true,
+        cwd: 'sass',
+        src: ['**/*.scss'],
+        dest: 'css',
+        ext: '.css'
       }
     },
     watch: {
       css: {
         files: '**/*.scss',
-        tasks: ['sass', 'autoprefixer'],
+        tasks: ['libsass', 'autoprefixer'],
+        options: {
+          spawn: false,
+          livereload: true
+        }
+      },
+      html: {
+        files: '**/*.html',
         options: {
           spawn: false,
           livereload: true
@@ -37,14 +42,13 @@ module.exports = function(grunt) {
         src: 'css/style.css'
       }
     }
-
   });
 
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-libsass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-autoprefixer');
 
-  grunt.registerTask('default', ['sass', 'connect', 'watch']);
+  grunt.registerTask('default', ['libsass', 'autoprefixer', 'connect', 'watch']);
 
 };

@@ -1,68 +1,200 @@
 /* ==========================================================================
+    FONTS
+========================================================================== */
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('../fonts/Lato-Regular/Lato-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Lato-Regular/Lato-Regular.woff') format('woff'), url('../fonts/Lato-Regular/Lato-Regular.ttf') format('truetype'), url('../fonts/Lato-Regular/Lato-Regular.svg#Lato-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Lato-Heavy';
+  src: url('../fonts/Lato-Heavy/Lato-Heavy.eot?#iefix') format('embedded-opentype'), url('../fonts/Lato-Heavy/Lato-Heavy.woff') format('woff'), url('../fonts/Lato-Heavy/Lato-Heavy.ttf') format('truetype'), url('../fonts/Lato-Heavy/Lato-Heavy.svg#Lato-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?87792584');
+  src: url('../fonts/fontello.eot?87792584#iefix') format('embedded-opentype'), url('../fonts/fontello.woff?87792584') format('woff'), url('../fonts/fontello.ttf?87792584') format('truetype'), url('../fonts/fontello.svg?87792584#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em; }
+
+.icon-heart:before {
+  content: '\e801'; }
+
+/* ==========================================================================
     GENERAL STYLES
 ========================================================================== */
-/* line 12, ../sass/style.scss */
-html,
-body {
+html, body {
   width: 100%;
   height: 100%;
   font-size: 14px;
-  font-family: Arial, sans-serif;
-}
+  font-family: 'Lato-Regular', Arial, sans-serif; }
 
-/* line 20, ../sass/style.scss */
-ul,
-p {
-  margin: 0;
-}
+ul, p {
+  margin: 0; }
 
-/* line 24, ../sass/style.scss */
 a {
-  text-decoration: none;
-}
+  text-decoration: none; }
 
-/* line 34, ../sass/style.scss */
-input,
-button,
-textarea,
-input:active,
-textarea:active,
-button:active,
-:focus {
-  outline: none;
-}
+input, button, textarea, input:active, textarea:active, button:active, :focus {
+  outline: none; }
 
-/* line 40, ../sass/style.scss */
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+*, *:before, *:after {
+  box-sizing: border-box; }
 
-/* line 44, ../sass/style.scss */
 a:focus {
-  outline: none;
-}
+  outline: none; }
 
-/* line 48, ../sass/style.scss */
 ul {
   list-style-type: none;
-  padding-left: 0;
-}
+  padding-left: 0; }
 
-/* line 54, ../sass/style.scss */
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
   content: ".";
   display: block;
   height: 0;
   overflow: hidden;
-  zoom: 1;
-}
+  zoom: 1; }
 
-/* line 62, ../sass/style.scss */
 .clearfix:after {
-  clear: both;
-}
+  clear: both; }
+
+.screen {
+  height: 100vh; }
+
+.bg-we {
+  background: url(../img/bg-green.jpg);
+  background-size: cover;
+  background-attachment: fixed; }
+
+.bg-chevron {
+  border: 15px solid #fff;
+  background-image: url(../img/chevron1.svg);
+  background-color: rgba(207, 205, 202, 0.8);
+  background-size: 160%;
+  min-height: 500px;
+  overflow: hidden; }
+
+.main-content {
+  text-align: center;
+  padding-top: 10vh; }
+
+#lettering-and {
+  opacity: 0.5; }
+
+.infobox {
+  position: relative;
+  z-index: 2;
+  width: 600px;
+  height: 100%;
+  margin: 0 auto; }
+
+.infobox-content {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 60%; }
+
+.flowers {
+  position: absolute;
+  z-index: -1;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%); }
+
+.flowers-left {
+  top: 60%;
+  left: -290px;
+  width: 599px;
+  height: 631px;
+  background: url(../img/flowers-left.png) no-repeat; }
+
+.flowers-right {
+  top: 50%;
+  right: -300px;
+  width: 492px;
+  height: 632px;
+  background: url(../img/flowers-right.png) no-repeat; }
+
+.text-big {
+  color: #494949;
+  font-size: 34px;
+  line-height: 60px;
+  letter-spacing: 2px;
+  font-family: 'Lato-Heavy', Arila, sans-serif; }
+
+.text-italic {
+  font-style: italic; }
+
+.text-date {
+  color: #0abab5;
+  font-size: 25px;
+  letter-spacing: 2px;
+  font-family: 'Lato-Heavy', Arila, sans-serif; }
+
+.countdown {
+  margin-top: 90px;
+  color: #949494;
+  font-size: 16px;
+  font-family: 'Lato-Heavy', Arila, sans-serif; }
+  .countdown div {
+    display: inline-block;
+    margin: 0 15px; }
+  .countdown .text-italic {
+    text-transform: none;
+    font-weight: normal; }
+  .countdown .number {
+    display: block;
+    margin: 10px auto;
+    font-size: 35px; }
+
+.block-tiffany {
+  background: #0abab5;
+  color: #fff;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  padding: 15px; }
+
+.block-framed {
+  border: 2px solid #fff;
+  padding: 100px 15px; }
+
+.line {
+  position: relative;
+  display: inline-block;
+  width: 30%;
+  height: 1px;
+  background: #fff;
+  margin-bottom: 60px; }
+  .line span {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    margin-left: -25px;
+    padding: 10px 15px;
+    background: #0abab5;
+    font-size: 25px; }
