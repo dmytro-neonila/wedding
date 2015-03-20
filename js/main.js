@@ -6,7 +6,7 @@ $(document).ready( function() {
 			scrollPos = $(this).scrollTop();
 
 		if (prevPos < 100 && scrollPos >= 100) {
-            $(".bg-chevron").velocity("scroll", { duration: 300, easing: "ease-in-out" });
+            $(".bg-chevron").velocity("scroll", { duration: 400, easing: "ease-out" });
         }
 
         prevPos = scrollPos;
