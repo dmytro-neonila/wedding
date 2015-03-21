@@ -11,7 +11,7 @@ $text-gray: #949494;
 
 @font-face {
   font-family: 'Lato-Regular';
-  src:  url('../fonts/Lato-Regular/Lato-Regular.eot?#iefix') format('embedded-opentype'), 
+  src:  url('../fonts/Lato-Regular/Lato-Regular.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Lato-Regular/Lato-Regular.woff') format('woff'),
         url('../fonts/Lato-Regular/Lato-Regular.ttf')  format('truetype'),
         url('../fonts/Lato-Regular/Lato-Regular.svg#Lato-Regular') format('svg');
@@ -21,7 +21,7 @@ $text-gray: #949494;
 
 @font-face {
   font-family: 'Lato-Heavy';
-  src:  url('../fonts/Lato-Heavy/Lato-Heavy.eot?#iefix') format('embedded-opentype'), 
+  src:  url('../fonts/Lato-Heavy/Lato-Heavy.eot?#iefix') format('embedded-opentype'),
         url('../fonts/Lato-Heavy/Lato-Heavy.woff') format('woff'),
         url('../fonts/Lato-Heavy/Lato-Heavy.ttf')  format('truetype'),
         url('../fonts/Lato-Heavy/Lato-Heavy.svg#Lato-Regular') format('svg');
@@ -46,7 +46,7 @@ $text-gray: #949494;
   font-style: normal;
   font-weight: normal;
   speak: none;
- 
+
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
@@ -55,12 +55,12 @@ $text-gray: #949494;
   font-variant: normal;
   text-transform: none;
   line-height: 1em;
- 
+
   /* Animation center compensation - margins should be symmetric */
   /* remove if not needed */
   margin-left: .2em;
 }
- 
+
 .icon-heart:before { content: '\e801'; }
 /* ==========================================================================
     GENERAL STYLES
@@ -129,6 +129,8 @@ ul {
     background: url(../img/bg-green.jpg);
     background-size: cover;
     background-attachment: fixed;
+    background-position: 50% 100%;
+    background-repeat: no-repeat
 }
 
 .color-overlay {
@@ -430,7 +432,7 @@ ul {
 }
 
 .loaded .ip-logo svg #lettering-and path {
-    opacity: 0.5; 
+    opacity: 0.5;
 }
 
 /* Header animation when loading finishes */

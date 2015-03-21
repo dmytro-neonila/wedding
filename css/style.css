@@ -84,7 +84,9 @@ ul {
 .bg-we {
   background: url(../img/bg-green.jpg);
   background-size: cover;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  background-position: 50% 100%;
+  background-repeat: no-repeat; }
 
 .color-overlay {
   width: 100vw;
