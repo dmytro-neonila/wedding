@@ -84,7 +84,6 @@ ul {
 .bg-we {
   background: url(../img/bg-photo.jpg);
   background-size: cover;
-  background-attachment: fixed;
   background-position: 50% 100%;
   background-repeat: no-repeat; }
 
