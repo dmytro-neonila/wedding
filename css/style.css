@@ -102,7 +102,7 @@ ul {
   border: 15px solid #fff;
   background-image: url(../img/chevron1.svg);
   background-color: rgba(207, 205, 202, 0.8);
-  background-size: 160%;
+  background-size: 10%;
   background-repeat: repeat;
   min-height: 500px;
   overflow: hidden; }
