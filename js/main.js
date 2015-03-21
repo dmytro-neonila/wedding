@@ -1,14 +1,11 @@
 $(document).ready( function() {
-	var prevPos = 0;
-
-	$(window).on("scroll", function(){
+	$(window).on("scroll", _.debounce(function(){
 		var screen = $(window).height(),
-			scrollPos = $(this).scrollTop();
+			scrollPos = $(this).scrollTop(),
+			diff = screen - scrollPos;
 
-		if (prevPos < 100 && scrollPos >= 100) {
+		if (diff > 0 && diff < screen*0.75) {
             $(".bg-chevron").velocity("scroll", { duration: 400, easing: "ease-out" });
         }
-
-        prevPos = scrollPos;
-	})
+	}, 500));
 });
