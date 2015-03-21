@@ -240,8 +240,8 @@ ul {
 .ip-logo {
   top: 0;
   height: 100%;
-  -webkit-transform: translate3d(0, 25%, 0);
-  transform: translate3d(0, 25%, 0); }
+  -webkit-transform: translate3d(0, 20%, 0);
+  transform: translate3d(0, 20%, 0); }
 
 .ip-loader {
   bottom: 5%; }
@@ -305,9 +305,9 @@ ul {
   opacity: 1; }
 
 .loaded .ip-logo {
-  -webkit-transform-origin: 50% 30%;
-  -ms-transform-origin: 50% 30%;
-      transform-origin: 50% 30%;
+  -webkit-transform-origin: 50% 0;
+  -ms-transform-origin: 50% 0;
+      transform-origin: 50% 0;
   -webkit-animation: animLoadedLogo 1s cubic-bezier(0.7, 0, 0.3, 1) forwards;
   animation: animLoadedLogo 1s cubic-bezier(0.7, 0, 0.3, 1) forwards; }
 
