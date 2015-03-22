@@ -1,6 +1,7 @@
 $(document).ready( function() {
 	initAutoScroll();
 	updateCountdown();
+	detectDevice();
 
 	function initAutoScroll () {
 		$(window)
@@ -68,5 +69,11 @@ $(document).ready( function() {
 	function getLastDigit (number) {
 		var numberStr = number.toString();
 		return +numberStr[numberStr.length - 1];
+	}
+
+	function detectDevice () {
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			$('html').addClass('mobile');
+		}
 	}
 });
