@@ -138,7 +138,8 @@ html.mobile {
         background: url(../img/bg-photo.jpg);
         background-size: cover;
         background-position: 50% 100%;
-        background-repeat: no-repeat
+        background-repeat: no-repeat;
+        transition: all 1s;
     }
 
     .bg-we {
