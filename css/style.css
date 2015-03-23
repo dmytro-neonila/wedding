@@ -101,7 +101,7 @@ html.mobile .bg-we {
   width: 100%;
   height: 100%;
   min-height: 300px;
-  background-color: #0abab5; }
+  background-color: #81D8D0; }
 
 .loaded .color-overlay {
   background-color: transparent;
@@ -177,7 +177,7 @@ html.mobile .bg-we {
   font-family: 'Lato-Heavy', Arial, sans-serif; }
 
 .text-date {
-  color: #0abab5;
+  color: #81D8D0;
   font-size: 1.5em;
   line-height: 1.5;
   letter-spacing: 2px;
@@ -200,7 +200,7 @@ html.mobile .bg-we {
     font-size: 35px; }
 
 .block-tiffany {
-  background: #0abab5;
+  background: #81D8D0;
   color: #fff;
   font-size: 1.1em;
   line-height: 1.5;
@@ -226,7 +226,7 @@ html.mobile .bg-we {
     left: 50%;
     margin-left: -33px;
     padding: 10px 15px;
-    background: #0abab5;
+    background: #81D8D0;
     font-size: 25px; }
 
 @media only screen and (min-width: 601px) and (max-width: 768px) {
@@ -347,12 +347,12 @@ html.mobile .bg-we {
   transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1); }
 
 .input-field:focus + .input-label, .input-filled .input-label {
-  color: #4ef5f0;
+  color: #e2f6f4;
   -webkit-transform: translate3d(-42%, -1em, 0px) scale3d(0.75, 0.75, 1);
           transform: translate3d(-42%, -1em, 0px) scale3d(0.75, 0.75, 1); }
 
 .input-field:focus ~ .graphic, .input-filled .graphic {
-  stroke: #4ef5f0;
+  stroke: #e2f6f4;
   -webkit-transform: translate3d(-66.6%, 0, 0);
           transform: translate3d(-66.6%, 0, 0); }
 
@@ -385,7 +385,7 @@ html.mobile .bg-we {
   color: #fff; }
 
 .btn-1:hover, .btn-1:active {
-  color: #0abab5;
+  color: #81D8D0;
   background: #fff; }
 
 .ip-header {
@@ -429,7 +429,7 @@ html.mobile .bg-we {
   width: 70%; }
 
 .ip-header .ip-logo svg #lettering-names path {
-  fill: #0abab5; }
+  fill: #81D8D0; }
 
 .ip-header .ip-loader svg path {
   fill: none;
@@ -440,7 +440,7 @@ html.mobile .bg-we {
 
 .ip-header .ip-loader svg path.ip-loader-circle {
   transition: stroke-dashoffset 0.2s;
-  stroke: #0abab5; }
+  stroke: #81D8D0; }
 
 /* Content */
 .ip-main {
