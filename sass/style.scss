@@ -506,6 +506,21 @@ html.mobile {
     background: $white;
 }
 
+.block-hashtag {
+    background: $tiffany-original;
+    color: $white;
+    padding: 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    a {
+        text-transform: none;
+        text-decoration: none;
+        color: $white;
+    }
+}
+
 // ================================================================
 
 .ip-header {

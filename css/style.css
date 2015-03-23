@@ -388,6 +388,19 @@ html.mobile .bg-we {
   color: #0abab5;
   background: #fff; }
 
+.block-hashtag {
+  background: #81D8D0;
+  color: #fff;
+  padding: 30px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center; }
+  .block-hashtag a {
+    text-transform: none;
+    text-decoration: none;
+    color: #fff; }
+
 .ip-header {
   position: fixed;
   top: 0;
