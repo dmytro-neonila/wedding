@@ -684,7 +684,7 @@ html.mobile {
 }
 
 .block-map {
-    height: 100vh;
+    height: 50vh;
     width: 100%;
 }
 .gm-style-iw * {
@@ -715,7 +715,6 @@ html.mobile {
 }
 
 .block-bs-demo {
-    width: 100%;
     min-height: 300px;
     height: 50vh;
     background-image: url(../img/bs.jpg);
@@ -744,7 +743,7 @@ html.mobile {
 
 @media only screen and (min-width: 601px) and (max-width: 768px),
        only screen and (min-width: 601px) and (max-height: 580px) {
-        
+
     .flowers-left {
         left: -165px;
         width: 350px;
@@ -807,4 +806,74 @@ html.mobile {
         font-size: 0.9em;
         font-weight: normal;
     }
+}
+
+/* ==========================================================================
+    Slider
+========================================================================== */
+
+.block-slider {
+    display: none;
+    background: $white;
+    padding: 30px 15px;
+}
+
+.jcarousel-wrapper {
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    border: 10px solid $tiffany-original;
+}
+
+/** Carousel **/
+
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel li {
+    width: 100%;
+    float: left;
+}
+
+.jcarousel img {
+    display: block;
+    max-width: 100%;
+    height: auto !important;
+}
+
+/** Carousel Controls **/
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    background: #4E443C;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+    font: 24px/27px Arial, sans-serif;
+    border-radius: 30px;
+}
+
+.jcarousel-control-prev {
+    left: 15px;
+}
+
+.jcarousel-control-next {
+    right: 15px;
 }
