@@ -119,12 +119,12 @@ $(document).ready( function() {
 	function drawMap () {
         var mapOptions = {
             center: new google.maps.LatLng(50.4382995,30.1470341),
-            zoom: 12,
+            zoom: 11,
             zoomControl: true,
             zoomControlOptions: {
                 style: google.maps.ZoomControlStyle.LARGE,
             },
-            disableDoubleClickZoom: true,
+            disableDoubleClickZoom: false,
             mapTypeControl: false,
             scaleControl: true,
             scrollwheel: false,

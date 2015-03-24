@@ -401,6 +401,21 @@ html.mobile .bg-we {
     text-decoration: none;
     color: #fff; }
 
+.block-bs-demo {
+  width: 100%;
+  min-height: 300px;
+  height: 50vh;
+  background-image: url(../img/bs.jpg);
+  background-position: center left;
+  background-size: cover; }
+
+.block-license {
+  padding: 15px;
+  color: #fff;
+  background-color: #81D8D0;
+  font-size: 0.7em;
+  text-align: center; }
+
 .ip-header {
   position: fixed;
   top: 0;
