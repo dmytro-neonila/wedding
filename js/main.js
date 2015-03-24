@@ -82,7 +82,7 @@ $(document).ready( function() {
 		return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 	}
 
-	// Form elements
+	// Input animation
 
 	// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
 	if (!String.prototype.trim) {
@@ -115,6 +115,8 @@ $(document).ready( function() {
 			classie.remove( ev.target.parentNode, 'input-filled' );
 		}
 	}
+
+	// Google map
 
 	function drawMap () {
         var mapOptions = {

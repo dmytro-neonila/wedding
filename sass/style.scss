@@ -1,9 +1,14 @@
+/* ==========================================================================
+    Variables
+========================================================================== */
+
 $white: #fff;
 $black: #000;
 $text-black: #494949;
+$text-gray: #949494;
 $tiffany: #0abab5;
 $tiffany-original: #81D8D0;
-$text-gray: #949494;
+$creme: #f1f1f1;
 
 /* ==========================================================================
     FONTS
@@ -46,7 +51,6 @@ $text-gray: #949494;
   font-style: normal;
   font-weight: normal;
   speak: none;
-
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
@@ -55,13 +59,11 @@ $text-gray: #949494;
   font-variant: normal;
   text-transform: none;
   line-height: 1em;
-
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
   margin-left: .2em;
 }
 
 .icon-heart:before { content: '\e801'; }
+
 /* ==========================================================================
     GENERAL STYLES
 ========================================================================== */
@@ -103,11 +105,6 @@ a:focus {
     outline: none;
 }
 
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
 .clearfix:before,
 .clearfix:after {
     content: ".";
@@ -119,6 +116,262 @@ ul {
 
 .clearfix:after {
     clear: both;
+}
+
+/* ==========================================================================
+    Preloader
+========================================================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    min-height: 480px;
+    width: 100%;
+    height: 100%;
+    background: $creme;
+
+    h1 {
+        margin: 0;
+    }
+
+    .logo svg {
+        min-width: 320px;
+        max-width: 750px;
+        width: 70%;
+
+        #lettering-names path {
+            fill: $tiffany-original;
+        }
+    }
+
+    .loader {
+        svg path {
+            fill: none;
+            stroke-width: 6;
+        }
+
+        svg path.loader-circlebg {
+            stroke: #ddd;
+        }
+
+        svg path.loader-circle {
+            transition: stroke-dashoffset 0.2s;
+            stroke: $tiffany-original;
+        }
+    }
+
+    .inner {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.logo,
+.loader {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    cursor: default;
+    pointer-events: none;
+}
+
+.logo {
+    top: 0;
+    height: 100%;
+    -webkit-transform: translate3d(0,20%,0);
+    transform: translate3d(0,20%,0);
+}
+
+.loader {
+    bottom: 5%;
+    svg {
+        width: 50%;
+    }
+}
+
+/* Animations
+========================================================================== */
+
+/* Initial animation of header elements */
+
+.loading .logo,
+.loading .loader {
+    opacity: 1;
+    -webkit-animation: animInitialHeader 1s cubic-bezier(0.7,0,0.3,1) both;
+    animation: animInitialHeader 1s cubic-bezier(0.7,0,0.3,1) both;
+}
+
+.loading .loader {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+@-webkit-keyframes animInitialHeader {
+    from {
+        opacity: 0; 
+        -webkit-transform: translate3d(0,800px,0);
+    }
+}
+
+@keyframes animInitialHeader {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0,800px,0);
+        transform: translate3d(0,800px,0); 
+    }
+}
+
+/* Header elements when loading finishes */
+
+.loaded .logo,
+.loaded .loader {
+    opacity: 1;
+}
+
+.loaded .logo {
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
+    animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
+}
+
+@-webkit-keyframes animLoadedLogo {
+    to { 
+        -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); 
+    }
+}
+
+@keyframes animLoadedLogo {
+    to { 
+        transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); 
+    }
+}
+
+.loaded .loader {
+    animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
+}
+
+@-webkit-keyframes animLoadedLoader {
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); 
+    }
+}
+
+@keyframes animLoadedLoader {
+    to { 
+        opacity: 0;
+        transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); 
+    }
+}
+
+/* Change the color of the logo */
+
+.loaded {
+    .logo svg path {
+        -webkit-transition: all 0.5s ease 0.3s;
+        transition: all 0.5s ease 0.3s;
+    }
+
+    .logo svg #lettering-names path {
+        fill: #fff;
+    }
+
+    .logo svg #lettering-and path {
+        opacity: 0.5;
+    }
+}
+
+/* Header animation when loading finishes */
+
+.loaded .header {
+    animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
+}
+
+@-webkit-keyframes animLoadedHeader {
+    to {
+        -webkit-transform: translate3d(0,-100%,0);
+    }
+}
+
+@keyframes animLoadedHeader {
+    to {
+        transform: translate3d(0,-100%,0); 
+    }
+}
+
+/* Content animations */
+.loaded {
+    .main h2,
+    .main .browser,
+    .main .browser .box,
+    .codrops-demos {
+        animation: animLoadedContent 1s cubic-bezier(0.7,0,0.3,1) both;
+    }
+
+    .main .browser,
+    .main .browser .box:first-child {
+        animation-delay: 0.1s;
+    }
+
+    .main .browser .box:nth-child(2) {
+        animation-delay: 0.15s;
+    }
+
+    .main .browser .box:nth-child(3) {
+        animation-delay: 0.2s;
+    }
+}
+
+@-webkit-keyframes animLoadedContent {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0,200px,0);
+    }
+}
+
+@keyframes animLoadedContent {
+    from { 
+        opacity: 0;
+        transform: translate3d(0,200px,0); 
+    }
+}
+
+/* Change layout class for header */
+
+.layout-switch .header {
+    position: absolute;
+}
+
+/* No JS */
+
+.no-js .header {
+    position: relative;
+    min-height: 0px;
+}
+
+.no-js .header .logo {
+    margin-top: 20px;
+    height: 180px;
+    opacity: 1;
+    transform: none;
+}
+
+.no-js .header .logo svg path {
+    fill: $white;
+}
+
+/* ==========================================================================
+    Main
+========================================================================== */
+
+.main {
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0;
+    width: 100%;
 }
 
 .screen {
@@ -146,7 +399,6 @@ html.mobile {
         background: none;
     }
 }
-
 
 .color-overlay {
     width: 100%;
@@ -305,81 +557,6 @@ html.mobile {
     }
 }
 
-@media only screen and (min-width: 601px) and (max-width: 768px) {
-
-	html,
-    body {
-        font-size: 16px;
-    }
-
-}
-
-@media only screen and (min-width: 601px) and (max-width: 768px),
-	   only screen and (min-width: 601px) and (max-height: 580px) {
-	.flowers-left {
-	    left: -165px;
-	    width: 350px;
-	    height: 315px;
-	}
-
-	.flowers-right {
-	    right: -175px;
-	    width: 250px;
-	    height: 315px;
-	}
-}
-
-@media only screen and (max-width: 600px) {
-    html,
-    body {
-        font-size: 14px;
-    }
-
-	.infobox {
-		width: 70%;
-	}
-
-	.infobox-content {
-		padding: 15px;
-	}
-
-	.countdown {
-		margin-top: 30px;
-	}
-
-	.flowers-left {
-	    left: -100px;
-	    width: 200px;
-	    height: 200px;
-	}
-
-	.flowers-right {
-	    right: -130px;
-	    width: 200px;
-	    height: 200px;
-	}
-
-	.block-framed {
-		padding: 50px 15px;
-	}
-
-	.line {
-		margin-bottom: 15px;
-	}
-}
-
-@media only screen and (max-width: 410px) {
-    .text-big,
-    .text-date {
-        font-size: 1.2em;
-    }
-
-    .countdown {
-        font-size: 0.9em;
-        font-weight: normal;
-    }
-}
-
 .input {
     position: relative;
     z-index: 1;
@@ -506,6 +683,22 @@ html.mobile {
     background: $white;
 }
 
+.block-map {
+    height: 100vh;
+    width: 100%;
+}
+.gm-style-iw * {
+    display: block;
+    width: 100%;
+}
+.gm-style-iw h4, .gm-style-iw p {
+    margin: 0;
+    padding: 0;
+}
+.gm-style-iw a {
+    color: #4272db;
+}
+
 .block-hashtag {
     background: $tiffany-original;
     color: $white;
@@ -538,237 +731,80 @@ html.mobile {
     text-align: center;
 }
 
-// ================================================================
+/* ==========================================================================
+    Media queries
+========================================================================== */
 
-.ip-header {
-    position: fixed;
-    top: 0;
-    z-index: 100;
-    min-height: 480px;
-    width: 100%;
-    height: 100%;
-    background: #f1f1f1;
-}
-
-.ip-header h1 {
-    margin: 0;
-}
-
-.ip-logo,
-.ip-loader {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    cursor: default;
-    pointer-events: none;
-}
-
-.ip-logo {
-    top: 0;
-    height: 100%;
-    -webkit-transform: translate3d(0,20%,0);
-    transform: translate3d(0,20%,0);
-}
-
-.ip-loader {
-    bottom: 5%;
-    svg {
-        width: 50%;
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    html,
+    body {
+        font-size: 16px;
     }
 }
 
-.ip-header .ip-inner {
-    display: block;
-    margin: 0 auto;
+@media only screen and (min-width: 601px) and (max-width: 768px),
+       only screen and (min-width: 601px) and (max-height: 580px) {
+        
+    .flowers-left {
+        left: -165px;
+        width: 350px;
+        height: 315px;
+    }
+
+    .flowers-right {
+        right: -175px;
+        width: 250px;
+        height: 315px;
+    }
 }
 
-.ip-header .ip-logo svg {
-    min-width: 320px;
-    max-width: 750px;
-    width: 70%;
+@media only screen and (max-width: 600px) {
+    html,
+    body {
+        font-size: 14px;
+    }
+
+    .infobox {
+        width: 70%;
+    }
+
+    .infobox-content {
+        padding: 15px;
+    }
+
+    .countdown {
+        margin-top: 30px;
+    }
+
+    .flowers-left {
+        left: -100px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .flowers-right {
+        right: -130px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .block-framed {
+        padding: 50px 15px;
+    }
+
+    .line {
+        margin-bottom: 15px;
+    }
 }
 
-.ip-header .ip-logo svg #lettering-names path {
-    fill: $tiffany-original;
-}
+@media only screen and (max-width: 410px) {
+    .text-big,
+    .text-date {
+        font-size: 1.2em;
+    }
 
-.ip-header .ip-loader svg path {
-    fill: none;
-    stroke-width: 6;
-}
-
-.ip-header .ip-loader svg path.ip-loader-circlebg {
-    stroke: #ddd;
-}
-
-.ip-header .ip-loader svg path.ip-loader-circle {
-    -webkit-transition: stroke-dashoffset 0.2s;
-    transition: stroke-dashoffset 0.2s;
-    stroke: $tiffany-original;
-}
-
-/* Content */
-.ip-main {
-    overflow: hidden;
-    margin: 0 auto;
-    padding: 0;
-    width: 100%;
-}
-
-/* Animations */
-
-/* Initial animation of header elements */
-.loading .ip-logo,
-.loading .ip-loader {
-    opacity: 1;
-    -webkit-animation: animInitialHeader 1s cubic-bezier(0.7,0,0.3,1) both;
-    animation: animInitialHeader 1s cubic-bezier(0.7,0,0.3,1) both;
-}
-
-.loading .ip-loader {
-    -webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s;
-}
-
-@-webkit-keyframes animInitialHeader {
-    from { opacity: 0; -webkit-transform: translate3d(0,800px,0); }
-}
-
-@keyframes animInitialHeader {
-    from { opacity: 0; -webkit-transform: translate3d(0,800px,0); transform: translate3d(0,800px,0); }
-}
-
-/* Header elements when loading finishes */
-.loaded .ip-logo,
-.loaded .ip-loader {
-    opacity: 1;
-}
-
-.loaded .ip-logo {
-    -webkit-transform-origin: 50% 0;
-    transform-origin: 50% 0;
-    -webkit-animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
-    animation: animLoadedLogo 1s cubic-bezier(0.7,0,0.3,1) forwards;
-}
-
-@-webkit-keyframes animLoadedLogo {
-    to { -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); }
-}
-
-@keyframes animLoadedLogo {
-    to { -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); }
-}
-
-.loaded .ip-loader {
-    -webkit-animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
-    animation: animLoadedLoader 0.5s cubic-bezier(0.7,0,0.3,1) forwards;
-}
-
-@-webkit-keyframes animLoadedLoader {
-    to { opacity: 0; -webkit-transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); }
-}
-
-@keyframes animLoadedLoader {
-    to { opacity: 0; -webkit-transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); }
-}
-
-/* Change the color of the logo */
-.loaded .ip-logo svg path {
-    -webkit-transition: all 0.5s ease 0.3s;
-    transition: all 0.5s ease 0.3s;
-}
-
-.loaded .ip-logo svg #lettering-names path {
-    fill: #fff;
-}
-
-.loaded .ip-logo svg #lettering-and path {
-    opacity: 0.5;
-}
-
-/* Header animation when loading finishes */
-.loaded .ip-header {
-    -webkit-animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
-    animation: animLoadedHeader 1s cubic-bezier(0.7,0,0.3,1) forwards;
-}
-
-@-webkit-keyframes animLoadedHeader {
-    to { -webkit-transform: translate3d(0,-100%,0); }
-}
-
-@keyframes animLoadedHeader {
-    to { -webkit-transform: translate3d(0,-100%,0); transform: translate3d(0,-100%,0); }
-}
-
-/* Content animations */
-.loaded .ip-main h2,
-.loaded .ip-main .browser,
-.loaded .ip-main .browser .box,
-.loaded .codrops-demos {
-    -webkit-animation: animLoadedContent 1s cubic-bezier(0.7,0,0.3,1) both;
-    animation: animLoadedContent 1s cubic-bezier(0.7,0,0.3,1) both;
-}
-
-.loaded .ip-main .browser,
-.loaded .ip-main .browser .box:first-child {
-    -webkit-animation-delay: 0.1s;
-    animation-delay: 0.1s;
-}
-
-.loaded .ip-main .browser .box:nth-child(2) {
-    -webkit-animation-delay: 0.15s;
-    animation-delay: 0.15s;
-}
-
-.loaded .ip-main .browser .box:nth-child(3) {
-    -webkit-animation-delay: 0.2s;
-    animation-delay: 0.2s;
-}
-
-@-webkit-keyframes animLoadedContent {
-    from { opacity: 0; -webkit-transform: translate3d(0,200px,0); }
-}
-
-@keyframes animLoadedContent {
-    from { opacity: 0; -webkit-transform: translate3d(0,200px,0); transform: translate3d(0,200px,0); }
-}
-
-/* Change layout class for header */
-.layout-switch .ip-header {
-    position: absolute;
-}
-
-/* No JS */
-.no-js .ip-header {
-    position: relative;
-    min-height: 0px;
-}
-
-.no-js .ip-header .ip-logo {
-    margin-top: 20px;
-    height: 180px;
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-}
-
-.no-js .ip-header .ip-logo svg path {
-    fill: #fff;
-}
-
-.block-map {
-    height: 100vh;
-    width: 100%;
-}
-.gm-style-iw * {
-    display: block;
-    width: 100%;
-}
-.gm-style-iw h4, .gm-style-iw p {
-    margin: 0;
-    padding: 0;
-}
-.gm-style-iw a {
-    color: #4272db;
+    .countdown {
+        font-size: 0.9em;
+        font-weight: normal;
+    }
 }
