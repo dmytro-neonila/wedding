@@ -210,7 +210,7 @@ a:focus {
 
 @-webkit-keyframes animInitialHeader {
     from {
-        opacity: 0; 
+        opacity: 0;
         -webkit-transform: translate3d(0,800px,0);
     }
 }
@@ -219,7 +219,7 @@ a:focus {
     from {
         opacity: 0;
         -webkit-transform: translate3d(0,800px,0);
-        transform: translate3d(0,800px,0); 
+        transform: translate3d(0,800px,0);
     }
 }
 
@@ -238,14 +238,14 @@ a:focus {
 }
 
 @-webkit-keyframes animLoadedLogo {
-    to { 
-        -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); 
+    to {
+        -webkit-transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1);
     }
 }
 
 @keyframes animLoadedLogo {
-    to { 
-        transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1); 
+    to {
+        transform: translate3d(0,100%,0) translate3d(0,50px,0) scale3d(0.65,0.65,1);
     }
 }
 
@@ -256,14 +256,14 @@ a:focus {
 @-webkit-keyframes animLoadedLoader {
     to {
         opacity: 0;
-        -webkit-transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); 
+        -webkit-transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1);
     }
 }
 
 @keyframes animLoadedLoader {
-    to { 
+    to {
         opacity: 0;
-        transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1); 
+        transform: translate3d(0,-100%,0) scale3d(0.3,0.3,1);
     }
 }
 
@@ -298,7 +298,7 @@ a:focus {
 
 @keyframes animLoadedHeader {
     to {
-        transform: translate3d(0,-100%,0); 
+        transform: translate3d(0,-100%,0);
     }
 }
 
@@ -333,9 +333,9 @@ a:focus {
 }
 
 @keyframes animLoadedContent {
-    from { 
+    from {
         opacity: 0;
-        transform: translate3d(0,200px,0); 
+        transform: translate3d(0,200px,0);
     }
 }
 
@@ -813,13 +813,12 @@ html.mobile {
 ========================================================================== */
 
 .block-slider {
-    display: none;
     background: $white;
     padding: 30px 15px;
 }
 
 .jcarousel-wrapper {
-    width: 60%;
+    width: 60vw;
     margin: 0 auto;
     position: relative;
     border: 10px solid $tiffany-original;
@@ -842,13 +841,12 @@ html.mobile {
 }
 
 .jcarousel li {
-    width: 100%;
     float: left;
 }
 
 .jcarousel img {
     display: block;
-    max-width: 100%;
+    width: 60vw;
     height: auto !important;
 }
 

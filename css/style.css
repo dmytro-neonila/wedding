@@ -618,12 +618,11 @@ html.mobile .bg-we {
     Slider
 ========================================================================== */
 .block-slider {
-  display: none;
   background: #fff;
   padding: 30px 15px; }
 
 .jcarousel-wrapper {
-  width: 60%;
+  width: 60vw;
   margin: 0 auto;
   position: relative;
   border: 10px solid #81D8D0; }
@@ -642,12 +641,11 @@ html.mobile .bg-we {
   padding: 0; }
 
 .jcarousel li {
-  width: 100%;
   float: left; }
 
 .jcarousel img {
   display: block;
-  max-width: 100%;
+  width: 60vw;
   height: auto !important; }
 
 /** Carousel Controls **/
