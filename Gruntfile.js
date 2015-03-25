@@ -48,43 +48,14 @@ module.exports = function(grunt) {
       no_dest: {
         src: 'css/style.css'
       }
-    },
-     uglify: {
-      options: {
-        mangle: false
-      },
-      files: [{
-          expand: true,
-          cwd: 'js/',
-          src: '**/*.js',
-          dest: 'js/minified'
-      }]
-    },
-    concat: {
-      dist: {
-        src: [
-          'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js',
-          'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js',
-          'js/minified/classie.min.js',
-          'js/minified/jacrousel.min.js',
-          'js/minified/main-preloading.min.js',
-          'js/minified/pathLoader.min.js',
-          'js/minified/touchwipe.min.js',
-          'js/minified/velocity.min.js',
-          'js/minified/main.min.js'
-        ],
-        dest: 'js/scripts.min.js',
-      },
-    },
+    }
   });
 
   grunt.loadNpmTasks('grunt-libsass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-autoprefixer');
 
-  grunt.registerTask('default', ['libsass', 'autoprefixer', 'connect', 'uglify', 'watch']);
+  grunt.registerTask('default', ['libsass', 'autoprefixer', 'connect', 'watch']);
 
 };

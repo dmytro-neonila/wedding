@@ -9,15 +9,7 @@ $(document).ready( function() {
 	$('.jcarousel')
         .jcarousel({
             wrap: 'circular'
-        })
-        .touchwipe({
-	        wipeLeft: function() {
-	            carousel.jcarousel('next');
-	        },
-	        wipeRight: function() {
-	            carousel.jcarousel('prev');
-	        }
-	    });
+        });
 
     $('.jcarousel-control-prev')
             .on('jcarouselcontrol:active', function() {
