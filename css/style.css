@@ -2,53 +2,13 @@
     Variables
 ========================================================================== */
 /* ==========================================================================
-    FONTS
-========================================================================== */
-@font-face {
-  font-family: 'Lato-Regular';
-  src: url('../fonts/Lato-Regular/Lato-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Lato-Regular/Lato-Regular.woff') format('woff'), url('../fonts/Lato-Regular/Lato-Regular.ttf') format('truetype'), url('../fonts/Lato-Regular/Lato-Regular.svg#Lato-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'Lato-Heavy';
-  src: url('../fonts/Lato-Heavy/Lato-Heavy.eot?#iefix') format('embedded-opentype'), url('../fonts/Lato-Heavy/Lato-Heavy.woff') format('woff'), url('../fonts/Lato-Heavy/Lato-Heavy.ttf') format('truetype'), url('../fonts/Lato-Heavy/Lato-Heavy.svg#Lato-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'fontello';
-  src: url('../fonts/fontello.eot?87792584');
-  src: url('../fonts/fontello.eot?87792584#iefix') format('embedded-opentype'), url('../fonts/fontello.woff?87792584') format('woff'), url('../fonts/fontello.ttf?87792584') format('truetype'), url('../fonts/fontello.svg?87792584#fontello') format('svg');
-  font-weight: normal;
-  font-style: normal; }
-
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "fontello";
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  display: inline-block;
-  text-decoration: inherit;
-  width: 1em;
-  margin-right: 0.2em;
-  text-align: center;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1em;
-  margin-left: 0.2em; }
-
-.icon-heart:before {
-  content: '\e801'; }
-
-/* ==========================================================================
     GENERAL STYLES
 ========================================================================== */
 html, body {
   width: 100%;
   height: 100%;
   font-size: 18px;
-  font-family: 'Lato-Regular', Arial, sans-serif; }
+  font-family: 'Open Sans', Arial, sans-serif; }
 
 ul, p {
   margin: 0; }
@@ -317,7 +277,8 @@ html.mobile .bg-we {
   width: 100%;
   height: 100%;
   background: #fff;
-  padding: 30px;
+  box-shadow: 0 0 45px rgba(0, 0, 0, 0.8);
+  padding: 15px;
   text-align: center;
   text-transform: uppercase;
   font-weight: bold; }
@@ -352,23 +313,23 @@ html.mobile .bg-we {
 
 .text-big {
   color: #494949;
-  font-size: 2.2em;
+  font-size: 2.5em;
   line-height: 1.5;
   letter-spacing: 2px;
-  font-family: 'Lato-Heavy', Arial, sans-serif; }
+  font-weight: bold; }
 
 .text-date {
   color: #0abab5;
-  font-size: 1.5em;
-  line-height: 1.5;
+  font-size: 4em;
+  line-height: 1.8;
   letter-spacing: 2px;
-  font-family: 'Lato-Heavy', Arial, sans-serif; }
+  font-family: 'Merienda One', cursive; }
 
 .countdown {
   margin-top: 60px;
   color: #949494;
   font-size: 1.1em;
-  font-family: 'Lato-Heavy', Arial, sans-serif; }
+  font-weight: bold; }
   .countdown div {
     display: inline-block;
     margin: 0 15px; }
@@ -401,7 +362,7 @@ html.mobile .bg-we {
   height: 1px;
   background: #fff;
   margin-bottom: 60px; }
-  .line span {
+  .line .icon-heart {
     position: absolute;
     top: -22px;
     left: 50%;
@@ -585,13 +546,19 @@ html.mobile .bg-we {
     width: 250px;
     height: 315px; } }
 
+@media only screen and (max-width: 1020px) {
+  .text-big {
+    font-size: 2em; }
+  .text-date {
+    font-size: 2.5em; } }
+
+@media only screen and (max-width: 768px) {
+  .infobox {
+    width: 70%; } }
+
 @media only screen and (max-width: 600px) {
   html, body {
-    font-size: 14px; }
-  .infobox {
-    width: 70%; }
-  .infobox-content {
-    padding: 15px; }
+    font-size: 15px; }
   .countdown {
     margin-top: 30px; }
   .flowers-left {
@@ -607,12 +574,14 @@ html.mobile .bg-we {
   .line {
     margin-bottom: 15px; } }
 
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 540px) {
   .text-big, .text-date {
     font-size: 1.2em; }
   .countdown {
     font-size: 0.9em;
-    font-weight: normal; } }
+    font-weight: normal; }
+    .countdown .number {
+      font-size: 25px; } }
 
 /* ==========================================================================
     Slider
@@ -626,6 +595,9 @@ html.mobile .bg-we {
   margin: 0 auto;
   position: relative;
   border: 10px solid #81D8D0; }
+  @media only screen and (max-width: 740px) {
+    .jcarousel-wrapper {
+      width: 90vw; } }
 
 /** Carousel **/
 .jcarousel {
@@ -647,21 +619,22 @@ html.mobile .bg-we {
   display: block;
   width: 60vw;
   height: auto !important; }
+  @media only screen and (max-width: 740px) {
+    .jcarousel img {
+      width: 90vw; } }
 
 /** Carousel Controls **/
 .jcarousel-control-prev, .jcarousel-control-next {
   position: absolute;
   top: 50%;
-  margin-top: -15px;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  background: #4E443C;
-  color: #fff;
-  text-decoration: none;
-  text-shadow: 0 0 1px #000;
-  font: 24px/27px Arial, sans-serif;
-  border-radius: 30px; }
+  margin-top: -20px;
+  text-decoration: none; }
+  .jcarousel-control-prev polyline, .jcarousel-control-next polyline {
+    opacity: 0.6;
+    transition: all 0.3s ease-out; }
+  .jcarousel-control-prev:hover polyline, .jcarousel-control-next:hover polyline {
+    stroke: #81D8D0;
+    opacity: 1; }
 
 .jcarousel-control-prev {
   left: 15px; }
