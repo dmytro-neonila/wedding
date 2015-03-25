@@ -528,6 +528,8 @@ html.mobile .bg-we {
   background-color: #81D8D0;
   font-size: 0.7em;
   text-align: center; }
+  .block-license .icon-heart {
+    font-size: 20px; }
 
 /* ==========================================================================
     Media queries
