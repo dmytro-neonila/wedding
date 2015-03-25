@@ -28,6 +28,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: '**/*.js',
+        tasks: ['uglify'],
         options: {
           spawn: false,
           livereload: true
@@ -48,6 +49,22 @@ module.exports = function(grunt) {
       no_dest: {
         src: 'css/style.css'
       }
+    },
+    uglify: {
+      app: {
+        files: {
+          'dest/js/wedding.js': [
+            'js/jquery.js',
+            'js/underscore.js',
+            'js/velocity.js',
+            'js/jcarousel.js',
+            'js/classie.js',
+            'js/pathLoader.js',
+            'js/main-preloading.js',
+            'js/main.js'
+          ]
+        }
+      }
     }
   });
 
@@ -55,7 +72,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('default', ['libsass', 'autoprefixer', 'connect', 'watch']);
+  grunt.registerTask('default', ['libsass', 'autoprefixer', 'uglify', 'connect', 'watch']);
 
 };
